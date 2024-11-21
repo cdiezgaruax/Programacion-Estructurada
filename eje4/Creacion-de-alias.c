@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include "estructuras.h"
+#include "Creacion-de-alias.h"
 
-int main() {
+void mostrarEstudiante(const Estudiante *est) {
+    printf("Nombre: %s, Edad: %d, Promedio: %.2f\n", est->nombre, est->edad, est->promedio);
+}
+
+void ejecutar() {
     Estudiante estudiante1;
     strncpy(estudiante1.nombre, "Juan", sizeof(estudiante1.nombre) - 1);
     estudiante1.nombre[sizeof(estudiante1.nombre) - 1] = '\0';
@@ -11,6 +15,4 @@ int main() {
 
     printf("Estudiante:\n");
     mostrarEstudiante(&estudiante1);
-
-    return 0;
 }
